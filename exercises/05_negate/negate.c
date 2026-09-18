@@ -8,9 +8,8 @@
  *   Rating: 2
  */
 int negate(int x) {
-#error TODO: Return the two's-complement negation of x
+return (~x + 1);
 }
-
 int main(void) {
   int x;
   if (scanf("%d", &x) != 1)

@@ -9,7 +9,8 @@
  *   Rating: 2
  */
 int allOddBits(int x) {
-#error TODO: Return 1 if every odd-numbered bit of x is set.
+int musk = 170 << 24 + 170 << 16 + 170 << 8 + 170;
+return !((x & musk) ^ musk);
 }
 
 int main(void) {

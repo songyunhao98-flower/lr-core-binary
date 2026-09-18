@@ -9,9 +9,10 @@
  *   Rating: 3
  */
 int isAsciiDigit(int x) {
-#error TODO: Return 1 when x is between 0x30 and 0x39 inclusive.
+  int a = !((x + (~48 + 1))>>31);
+  int b = !((57 + (~x + 1))>>31);
+  return  a & b;
 }
-
 int main(void) {
   int x;
   if (scanf("%d", &x) != 1)

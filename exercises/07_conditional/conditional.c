@@ -8,9 +8,10 @@
  *   Rating: 3
  */
 int conditional(int x, int y, int z) {
-#error TODO: Return the equivalent of x ? y : z using bit operations.
+int judge1 = (~!x + 1);
+    int judge2 = ~!judge1 + 1;
+    return (judge1 & z) | (judge2 & y);
 }
-
 int main(void) {
   int x, y, z;
   if (scanf("%d %d %d", &x, &y, &z) != 3)

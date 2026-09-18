@@ -7,9 +7,17 @@
  *   Max ops: 24
  *   Rating: 3
  */
+
 int isLessOrEqual(int x, int y) {
-#error TODO: Return 1 when x is less than or equal to y.
+    int sx = (x >> 31) & 1;
+    int sy = (y >> 31) & 1;
+    int same = !(sx ^ sy);
+    int diff = sx & !sy;  // 异号且x负y正 → x<=y成立
+    int sub1 = y + (~x + 1); // y‑x（同号时无溢出）
+    int sub2 = !((sub1 >> 31) & 1);
+    return (same & sub2) | diff;
 }
+
 
 int main(void) {
   int x, y;
