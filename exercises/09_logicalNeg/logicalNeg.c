@@ -9,8 +9,13 @@
  *   Rating: 4
  */
 int logicalNeg(int x) {
-#error TODO: Implement logical negation without using the ! operator.
+int judge = ( x | ( ~ x + 1)) >> 31;
+return ~ judge & 1;
 }
+
+
+
+
 
 int main(void) {
   int x;

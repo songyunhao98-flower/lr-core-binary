@@ -9,7 +9,7 @@
  *   Rating: 2
  */
 int allOddBits(int x) {
-int musk = 170 << 24 + 170 << 16 + 170 << 8 + 170;
+int musk = (170 << 24) + (170 << 16) + (170 << 8) + 170;
 return !((x & musk) ^ musk);
 }
 
